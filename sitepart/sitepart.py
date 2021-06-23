@@ -9,28 +9,28 @@ def colors(palette):
     ---
     parameters:
     - name: palette
-    in: path
-    type: string
-    enum: ['all', 'rgb', 'cmyk']
-    required: true
-    default: all
+     in: path
+     type: string
+     enum: ['all', 'rgb', 'cmyk']
+     required: true
+     default: all
     definitions:
-    Palette:
-    type: object
-    properties:
-    palette_name:
-    type: array
-    items:
-    $ref: '#/definitions/Color'
-    Color:
-    type: string
+     Palette:
+      type: object
+      properties:
+       palette_name:
+        type: array
+        items:
+         $ref: '#/definitions/Color'
+     Color:
+      type: string
     responses:
-    200:
-    description: A list of colors (may be filtered by palette)
-    schema:
-    $ref: '#/definitions/Palette'
-    examples:
-    rgb: ['red', 'green', 'blue']
+     200:
+      description: A list of colors (may be filtered by palette)
+      schema:
+       $ref: '#/definitions/Palette'
+      examples:
+       rgb: ['red', 'green', 'blue']
     """
     # содержимое цветов палитр
     all_colors = {
